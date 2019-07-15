@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Tarefas - Usuário</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
+	</nav>
+	<div class="container">
+		<h3>Inserção de novo usuário</h3>
+
+		<form class="form-horizontal" action="/registration" method="post"
+			th:object="${usuario}">
+			<div class="row">
+				<div class="form-group col-md-6">
+				
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('email')}">
+					<label th:errors="*{email}" class="validation-massege"></label>
+				</div>
+					<label for="email">E-mail:</label> 
+					<input class="form-control" type="text" name="email" id="email" th:field="*{email}">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-6">
+				
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('senha')}">
+					<label th:errors="*{senha}" class="validation-massege"></label>
+				</div>
+					<label for="senha">Senha:</label> 
+					<input class="form-control"
+						type="password" name="senha" id="senha" th:field="*{senha}">
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+		</form>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

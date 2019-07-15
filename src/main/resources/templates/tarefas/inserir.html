@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Tarefas - Inserir</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+
+	<div th:replace="fragmentos/fragmentos.html :: cabecalho"></div>
+	<div class="container">
+		<h3>Inserção de nova tarefa</h3>
+
+		<form class="form-horizontal" action="/tarefas/inserir" method="post"
+			th:object="${tarefa}">
+			<div class="row">
+				<div class="form-group col-md-6">
+				
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('titulo')}">
+					<label th:errors="*{titulo}" class="validation-massege"></label>
+				</div>
+					<label for="titulo">Título:</label> 
+					<input class="form-control" type="text" name="titulo" id="titulo" th:field="*{titulo}">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-6">
+				
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('descricao')}">
+					<label th:errors="*{descricao}" class="validation-massege"></label>
+				</div>
+					<label for="titulo">Descrição:</label> 
+					<input class="form-control"
+						type="text" name="descricao" id="descricao" th:field="*{descricao}">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="form-group col-md-6">
+				
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('dataExpiracao')}">
+					<label th:errors="*{dataExpiracao}" class="validation-massege"></label>
+				</div>
+					<label for="data">Data de Expiração</label> 
+					<input class="form-control" type="date" name="tdata" id="tdata" th:field="*{dataExpiracao}" >
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-primary">Salvar</button>
+		</form>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

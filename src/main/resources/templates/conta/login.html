@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Gerenciador de Tarefas - Login</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Gerenciador de Tarefas</a>
+	</nav>
+
+	<div class="container">
+		<h3>Login</h3>
+
+		<form action="/login" method="post" class="form-signin">
+			<div class="form-group">
+				<div class="col-md-9">
+					<input class="form-control" type="text" name="email" id="email" placeholder="E-mail">
+				</div>
+			</div>
+
+			<div class="form-group ">
+				<div class="col-md-9">
+					<input class="form-control" type="password" name="senha" id="senha" placeholder="Senha">
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Entrar</button>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-md-9">
+					<div class="alert alert-danger" role="alert" th:if="${param.error}">
+						Não foi possível fazer login. Dados inválidos, tente novamente!
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<span>Não possui conta?<a href="/registration"> Cadastra-se!</a></span>
+			</div>			
+		</form>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
