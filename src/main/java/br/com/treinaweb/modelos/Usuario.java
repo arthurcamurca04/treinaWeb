@@ -25,7 +25,7 @@ public class Usuario {
 	
 	@Column(name = "usr_email", nullable = false, length = 100)
 	@NotNull(message = "Campo e-mail com preenchimento obrigatório!")
-	@Length(max = 100, min=5, message = "Devem ser informados no minímo e no máximo 100 caracteres")
+	@Length(max = 100, min=5, message = "Devem ser informados no minímo 5 e no máximo 100 caracteres")
 	private String email;
 	
 	@Column(name = "usr_senha", nullable = false, length = 100)

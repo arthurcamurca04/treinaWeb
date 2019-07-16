@@ -7,12 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-	@GetMapping
+	@GetMapping("/")
 	public ModelAndView home()
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("home/home");
-		mv.addObject("mensagem", "Mensagem do Controller");
+		mv.addObject("mensagem", "Organize suas tarefas de uma maneira fácil e prática!");
 		return mv;
 	}
 }
